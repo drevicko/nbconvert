@@ -21,9 +21,9 @@ try:
     from docutils.utils.math.math2html import math2html
 except ImportError:
     from docutils.error_reporting import  SafeString        # the old way
-from docutils.math import unichar2tex, pick_math_environment
-from docutils.math.latex2mathml import parse_latex_math
-from docutils.math.math2html import math2html
+    from docutils.math import unichar2tex, pick_math_environment
+    from docutils.math.latex2mathml import parse_latex_math
+    from docutils.math.math2html import math2html
 from docutils.transforms import writer_aux
 from IPython.nbformat import current as nbformat
 
