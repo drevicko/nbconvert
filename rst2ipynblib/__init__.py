@@ -14,11 +14,17 @@ import re
 import urllib
 import docutils
 from docutils import frontend, nodes, utils, writers, languages, io
-from docutils.error_reporting import SafeString
-from docutils.transforms import writer_aux
+try:
+    from docutils.utils.error_reporting import SafeString   # the new way 
+    from docutils.utils.math import unichar2tex, pick_math_environment
+    from docutils.utils.math.latex2mathml import parse_latex_math
+    from docutils.utils.math.math2html import math2html
+except ImportError:
+    from docutils.error_reporting import  SafeString        # the old way
 from docutils.math import unichar2tex, pick_math_environment
 from docutils.math.latex2mathml import parse_latex_math
 from docutils.math.math2html import math2html
+from docutils.transforms import writer_aux
 from IPython.nbformat import current as nbformat
 
 
